@@ -1,22 +1,21 @@
 import React from 'react';
 
-class Root extends React.Component {
+import { HashRouter, Route } from 'react-router-dom';
 
-  constructor(props) {
-    super(props);
+import MainMenu from './MainMenu';
+import About from './About';
+import Game from './Game';
 
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
+function Root() {
+  return (
+    <HashRouter>
       <div>
-        Hello, world!
+        <Route exact path="/" component={MainMenu} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/game" component={Game} />
       </div>
-    );
-  }
+    </HashRouter>
+  );
 }
 
 export default Root;
