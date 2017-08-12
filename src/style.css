@@ -5,6 +5,8 @@
   box-sizing: border-box;
 }
 
+.EndGame,
+.Pause,
 .About,
 .MainMenu {
   width: 80%;
@@ -13,13 +15,17 @@
   border: 1px solid black;
   box-sizing: border-box;
   text-align: center;
+  background: white;
 }
 
+.EndGame h1,
+.Pause h1,
 .About h1,
 .MainMenu h1 {
   font-size: 4em;
 }
 
+.Pause--navbar,
 .MainMenu--navbar {
   display: flex;
   height: 33vh;
@@ -28,19 +34,27 @@
   justify-content: space-around;
 }
 
+.EndGame--button,
+.Pause--button,
 .About--button,
-.MainMenu--navbar--button {
+.MainMenu--navbar--button,
+.Rules--tip--button {
   display: inline-block;
   width: 8em;
+  background: #fff;
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 2em;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
+.EndGame--button:hover,
+.Pause--button:hover,
 .About--button:hover,
-.MainMenu--navbar--button:hover {
+.MainMenu--navbar--button:hover,
+.Rules--tip--button:hover {
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -121,4 +135,57 @@
   height: 20px;
   border: 1px solid black;
   margin: 7px 0 7px;
+}
+
+.Shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7)
+}
+
+
+.Rules--tip {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  width: 17em;
+  padding: 0.5em 1em 0.5em;
+  background: #fff;
+  border: 1px solid;
+  font-size: 1.7em;
+  text-align: right;
+}
+
+.Rules--tip h2 {
+  text-align: center;
+}
+
+.Rules--tip p {
+  text-align: left;
+  margin-bottom: 0.3em;
+}
+
+.Rules--tip--button {
+  font-size: 1em;
+}
+
+
+.Pause--navbar {
+  margin-top: 1em;
+  height: 43vh;
+}
+
+.EndGame--score {
+  margin: 1em;
+  font-size: 1.5em;
+}
+
+.EndGame--score div {
+  width: 50%;
+  margin: 0.2em auto 0;
+  border: 1px solid;
+  font-size: 3em;
 }

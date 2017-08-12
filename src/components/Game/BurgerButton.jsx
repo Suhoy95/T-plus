@@ -1,8 +1,8 @@
 import React from 'react';
 
-function BurgerButton(props) {
+function BurgerButton({ onClick }) {
   return (
-    <div className="BurgerButton" {...props}>
+    <div className="BurgerButton" onClick={onClick}>
       <div className="BurgerButton--line" />
       <div className="BurgerButton--line" />
       <div className="BurgerButton--line" />
