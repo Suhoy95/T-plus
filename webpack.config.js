@@ -8,7 +8,7 @@ module.exports = {
 
   output: {
     filename: 'build.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: __dirname,
   },
 
   module: {
@@ -49,7 +49,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: __dirname,
     port: 8080,
     hot: true,
   },

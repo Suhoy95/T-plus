@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 .About,
 .MainMenu {
   width: 80%;
@@ -41,4 +48,77 @@
   padding: 0 10% 0;
   text-align: justify;
   font-size: 1.5em;
+}
+
+.Grid-left,
+.Grid-right {
+  display: inline-block;
+  height: 100%;
+}
+
+.Grid-left {
+  width: 80vw;
+}
+
+.Grid-right {
+  width: 20vw;
+  border-left: 1px solid;
+}
+
+.Header {
+  height: 15vh;
+  border-bottom: 1px solid black;
+}
+
+.Header--InfoItem {
+  display: inline-block;
+  height: 15vh;
+}
+
+.Header--InfoItem img {
+  width: 15vh;
+  height: 15vh;
+  float: left;
+}
+
+.Header--InfoItem span {
+  display: block;
+  height: 15vh;
+  width: 20vh;
+  padding-top: 1vh;
+  font-size: 4.5em;
+  float: left;
+}
+
+.Body {
+  height: 85vh;
+}
+
+.SearchList {
+  overflow-y: auto;
+}
+
+.SearchList img {
+  display: block;
+  width: 80%;
+  margin: 0.5em auto 0.5em;
+}
+
+.GameScene {
+  overflow: auto;
+}
+
+.BurgerButton {
+  width: 100px;
+  height: 81px;
+  margin: 1vh auto;
+  cursor: pointer;
+}
+
+.BurgerButton--line {
+  display: block;
+  width: 100px;
+  height: 20px;
+  border: 1px solid black;
+  margin: 7px 0 7px;
 }
