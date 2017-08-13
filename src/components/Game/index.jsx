@@ -118,7 +118,7 @@ export default class Game extends Component {
                     Продолжить
                   </button>
                   <button className="Pause--button" onClick={this.restart}>
-                    Заного
+                    Заново
                   </button>
                   <Link style={{ marginTop: '30px' }} className="Pause--button" to="/">
                     Выход

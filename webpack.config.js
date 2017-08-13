@@ -50,6 +50,7 @@ module.exports = {
 
   devServer: {
     contentBase: __dirname,
+    host: '0.0.0.0',
     port: 8080,
     hot: true,
   },
