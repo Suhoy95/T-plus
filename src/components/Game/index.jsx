@@ -97,7 +97,7 @@ export default class Game extends Component {
         </div>
         <div className="Body">
           <div className="Grid-left GameScene">
-            <img style={this.sceneSize} src="img/Full_scene.svg" alt="Игровое поле" />
+            <img style={this.sceneSize} src="img/scene.svg" alt="Игровое поле" />
             <button
               className="GameScene--plus-scale"
               onClick={() => this.scale += 1}
@@ -108,13 +108,17 @@ export default class Game extends Component {
             />
           </div>
           <div className="Grid-right SearchList">
-            <img src="img/qwe.jpg" alt="Счет" />
-            <img src="img/qwe.jpg" alt="Счет" />
-            <img src="img/qwe.jpg" alt="Счет" />
-            <img src="img/qwe.jpg" alt="Счет" />
-            <img src="img/qwe.jpg" alt="Счет" />
-            <img src="img/qwe.jpg" alt="Счет" />
-            <img src="img/qwe.jpg" alt="Счет" />
+            <img src="img/items/cable.svg" alt="Провод" />
+            <img src="img/items/coffee-maker.svg" alt="Кофе-машина" />
+            <img src="img/items/extension_cable.svg" alt="Удлинитель" />
+            <img src="img/items/hoover.svg" alt="Пылесос" />
+            <img src="img/items/hoover(2).svg" alt="Пылесос(2)" />
+            <img src="img/items/lamp_in_corridor.svg" alt="Лампа в корридоре" />
+            <img src="img/items/lamp_near_bad.svg" alt="Лампа у кровати" />
+            <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
+            <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
+            <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
+            <img src="img/items/stove.svg" alt="Плита" />
           </div>
         </div>
         {
