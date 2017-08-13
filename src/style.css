@@ -119,7 +119,41 @@
 }
 
 .GameScene {
+  position: relative;
   overflow: auto;
+  text-align: center;
+}
+
+.GameScene--plus-scale,
+.GameScene--minus-scale {
+  position: fixed;
+  left: 72vw;
+  width: 10vh;
+  height: 10vh;
+  border: 1px solid;
+  border-radius: 5vh;
+  background: #fff;
+  font-size: 10vh;
+  text-align: center;
+  cursor: pointer;
+}
+
+.GameScene--plus-scale {
+  top: 74vh;
+  line-height: 10vh;
+}
+
+.GameScene--plus-scale::after {
+  content: '+';
+}
+
+.GameScene--minus-scale {
+  top: 86vh;
+  line-height: 8vh;
+}
+
+.GameScene--minus-scale::after {
+  content: '-';
 }
 
 .BurgerButton {
@@ -189,3 +223,4 @@
   border: 1px solid;
   font-size: 3em;
 }
+

@@ -25,9 +25,26 @@ export default class Game extends Component {
   get defaultState() {
     return {
       score: 0,
-      time: 5,
+      time: 60,
       stage: Stages.Rules,
+      scale: 0,
     };
+  }
+
+  get sceneSize() {
+    return {
+      height: `${98 + 20 * this.state.scale}%`,
+    };
+  }
+
+  get scale() {
+    return this.state.scale;
+  }
+  set scale(value) {
+    if (value < 0 || value > 5) {
+      return;
+    }
+    this.setState({ scale: value });
   }
 
   start() {
@@ -80,7 +97,15 @@ export default class Game extends Component {
         </div>
         <div className="Body">
           <div className="Grid-left GameScene">
-            <img src="img/Full_scene.svg" alt="Игровое поле" />
+            <img style={this.sceneSize} src="img/Full_scene.svg" alt="Игровое поле" />
+            <button
+              className="GameScene--plus-scale"
+              onClick={() => this.scale += 1}
+            />
+            <button
+              className="GameScene--minus-scale"
+              onClick={() => this.scale -= 1}
+            />
           </div>
           <div className="Grid-right SearchList">
             <img src="img/qwe.jpg" alt="Счет" />
