@@ -84,6 +84,7 @@ export default class Game extends Component {
         this.state.pc_face &&
         this.state.stove) {
       this.setState({ stage: Stages.EndGame });
+      clearInterval(this.tickInterval);
     }
   }
 
@@ -163,12 +164,13 @@ export default class Game extends Component {
       <div className="Game">
         <div className="Header">
           <div className="Grid-left">
+            <img src="img/logo.png" className="Header--logo" alt="t+" />
             <div className="Header--InfoItem" title="Счет">
-              <img src="img/qwe.jpg" alt="Счет" />
+              <h2>Очки:</h2>
               <span>{this.state.score}</span>
             </div>
             <div className="Header--InfoItem" title="Оставшееся время">
-              <img src="img/qwe.jpg" alt="Оставшееся время" />
+              <h2>Оставшееся время:</h2>
               <span>{this.time}</span>
             </div>
           </div>
@@ -249,10 +251,10 @@ export default class Game extends Component {
                   <button className="Pause--button" onClick={this.start}>
                     Продолжить
                   </button>
-                  <button className="Pause--button" onClick={this.restart}>
+                  <button style={{ marginTop: '2vh' }} className="Pause--button" onClick={this.restart}>
                     Заново
                   </button>
-                  <Link style={{ marginTop: '30px' }} className="Pause--button" to="/">
+                  <Link className="Pause--button" to="/">
                     Выход
                   </Link>
                 </div>
