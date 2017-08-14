@@ -153,8 +153,8 @@ export default class Game extends Component {
           </div>
         </div>
         <div className="Body">
-          <div className="Grid-left GameScene">
-            <Scene id={this.state.id} stage={this.state.stage} />
+          <div className="Grid-left">
+            <Scene style={this.sceneSize} id={this.state.id} stage={this.state.stage} />
             <button
               className="GameScene--plus-scale"
               onClick={() => this.scale += 1}

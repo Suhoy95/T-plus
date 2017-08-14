@@ -28904,9 +28904,9 @@ dAAAAECgAwAAgEAHAAAABDoAAAD8hff/DwA3f5+DuNf30QAAAABJRU5ErkJggg==" transform="mat
 window.svgClick = (e) => console.log(e);
 function Scene(props) {
   return (
-		<div
+		<div className="Grid-left GameScene"
 			dangerouslySetInnerHTML={{ __html:`
-				<svg version="1.1" id="Layer_${props.id}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 450" style="enable-background:new 0 0 450 450;" xml:space="preserve" onclick="svgClick(event)">
+				<svg style="height: ${props.style.height}" version="1.1" id="Layer_${props.id}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 450" style="enable-background:new 0 0 450 450;" xml:space="preserve" onclick="svgClick(event)">
 				${scene}` }}
 		/>
   );
