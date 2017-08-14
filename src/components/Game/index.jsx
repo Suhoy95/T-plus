@@ -70,7 +70,7 @@ export default class Game extends Component {
     let el = event.path.find(n => n.classList && n.classList.contains(className));
     if (el) {
       el.style.display = 'none';
-      if(!this.state[className]) {
+      if (!this.state[className]) {
         this.score += 10;
       }
       this.setState({ [className]: true });
