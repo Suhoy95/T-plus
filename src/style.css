@@ -36,6 +36,10 @@ body {
   color: #717b83;
 }
 
+.EndGame h1 {
+  font-size: 6vh;
+}
+
 .Pause--navbar,
 .MainMenu--navbar {
   display: flex;

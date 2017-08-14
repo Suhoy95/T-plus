@@ -43,6 +43,8 @@ export default class Game extends Component {
       stage: Stages.Rules,
       scale: 0,
 
+      timeIsOut: true,
+
       id: 0,
 
       cable: false,
@@ -83,7 +85,10 @@ export default class Game extends Component {
         this.state.pc_back &&
         this.state.pc_face &&
         this.state.stove) {
-      this.setState({ stage: Stages.EndGame });
+      this.setState({
+        stage: Stages.EndGame,
+        timeIsOut: false,
+      });
       clearInterval(this.tickInterval);
     }
   }
@@ -266,7 +271,7 @@ export default class Game extends Component {
           this.state.stage === Stages.EndGame ?
             <div className="Shadow">
               <div className="EndGame">
-                <h1>Время вышло</h1>
+                <h1>{this.state.timeIsOut ? 'Время вышло' : 'Вы нашли все утечки электричества'}</h1>
                 <div className="EndGame--score">
                   Ваш выигрыш
                   <div>{this.state.score}</div>
