@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import BurgerButton from './BurgerButton';
+import Scene from './Scene';
 import Social from './Social';
+
 
 const Stages = {
   Rules: 'RULES',
@@ -22,19 +24,69 @@ export default class Game extends Component {
     this.tick = this.tick.bind(this);
   }
 
+  componentDidMount() {
+    window.svgClick = this.onSvgClick.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    window.svgClick = this.onSvgClick.bind(this);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.tickInterval);
+  }
+
   get defaultState() {
     return {
-      score: 0,
+      score: 80,
       time: 60,
       stage: Stages.Rules,
       scale: 0,
+
+      id: 0,
+
+      pc_face: false,
+      hoover_2: false,
+      extension_cable: false,
     };
+  }
+
+  onSvgClick(event) {
+    this.addScore.call(this, event, 'pc_face');
+    this.addScore.call(this, event, 'hoover_2');
+    this.addScore.call(this, event, 'extension_cable');
+
+    if (this.state.pc_face &&
+        this.state.hoover_2 &&
+        this.state.extension_cable) {
+      this.setState({ stage: Stages.EndGame });
+    }
+  }
+
+  addScore(event, className) {
+    if (!event.path) {
+      return;
+    }
+    let el = event.path.find(n => n.classList && n.classList.contains(className));
+    if (el) {
+      el.style.display = 'none';
+      this.score += 10;
+      this.setState({ [className]: true });
+    }
   }
 
   get sceneSize() {
     return {
       height: `${98 + 20 * this.state.scale}%`,
     };
+  }
+
+  get score() {
+    return this.state.score;
+  }
+
+  set score(value) {
+    this.setState({ score: value });
   }
 
   get scale() {
@@ -48,7 +100,10 @@ export default class Game extends Component {
   }
 
   start() {
-    this.setState({ stage: Stages.Game });
+    this.setState({
+      stage: Stages.Game,
+      id: this.state.id + 1,
+    });
     this.tickInterval = setInterval(this.tick, 1000);
   }
 
@@ -97,7 +152,7 @@ export default class Game extends Component {
         </div>
         <div className="Body">
           <div className="Grid-left GameScene">
-            <img style={this.sceneSize} src="img/scene.svg" alt="Игровое поле" />
+            <Scene id={this.state.id} stage={this.state.stage} />
             <button
               className="GameScene--plus-scale"
               onClick={() => this.scale += 1}
@@ -108,17 +163,39 @@ export default class Game extends Component {
             />
           </div>
           <div className="Grid-right SearchList">
-            <img src="img/items/cable.svg" alt="Провод" />
-            <img src="img/items/coffee-maker.svg" alt="Кофе-машина" />
-            <img src="img/items/extension_cable.svg" alt="Удлинитель" />
-            <img src="img/items/hoover.svg" alt="Пылесос" />
-            <img src="img/items/hoover(2).svg" alt="Пылесос(2)" />
-            <img src="img/items/lamp_in_corridor.svg" alt="Лампа в корридоре" />
-            <img src="img/items/lamp_near_bad.svg" alt="Лампа у кровати" />
-            <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
-            <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
-            <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
-            <img src="img/items/stove.svg" alt="Плита" />
+            <div className="img gray">
+              <img src="img/items/cable.svg" alt="Провод" />
+            </div>
+            <div className="img gray">
+              <img src="img/items/coffee-maker.svg" alt="Кофе-машина" />
+            </div>
+            <div  className={`img ${this.state.extension_cable ? 'gray' : ''}`}>
+              <img src="img/items/extension_cable.svg" alt="Удлинитель" />
+            </div>
+            <div className="img gray">
+              <img src="img/items/hoover.svg" alt="Пылесос" />
+            </div>
+            <div className={`img ${this.state.hoover_2 ? 'gray' : ''}`}>
+              <img src="img/items/hoover_2.svg" alt="Пылесос(2)" />
+            </div>
+            <div className="img gray">
+              <img src="img/items/lamp_in_corridor.svg" alt="Лампа в корридоре" />
+            </div>
+            <div className="img gray">
+              <img src="img/items/lamp_near_bad.svg" alt="Лампа у кровати" />
+            </div>
+            <div className="img gray">
+              <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
+            </div>
+            <div className="img gray">
+              <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
+            </div>
+            <div className={`img ${this.state.pc_face ? 'gray' : ''}`}>
+              <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
+            </div>
+            <div className="img gray">
+              <img src="img/items/stove.svg" alt="Плита" />
+            </div>
           </div>
         </div>
         {
