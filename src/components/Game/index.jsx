@@ -160,7 +160,7 @@ export default class Game extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Game">
         <div className="Header">
           <div className="Grid-left">
             <div className="Header--InfoItem" title="Счет">

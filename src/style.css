@@ -5,14 +5,17 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #7d7d7d;
+}
+
 .EndGame,
 .Pause,
 .About,
 .MainMenu {
-  width: 80%;
-  height: 90vh;
-  margin: 5vh 10% 5vh 10%;
-  border: 1px solid black;
+  width: 60vw;
+  height: 70vh;
+  margin: 15vh auto;
   box-sizing: border-box;
   text-align: center;
   background: white;
@@ -22,7 +25,10 @@
 .Pause h1,
 .About h1,
 .MainMenu h1 {
-  font-size: 4em;
+  padding-top: 2vh;
+  font-size: 7vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #717b83;
 }
 
 .Pause--navbar,
@@ -40,28 +46,24 @@
 .MainMenu--navbar--button,
 .Rules--tip--button {
   display: inline-block;
-  width: 8em;
-  background: #fff;
-  border: 1px solid black;
-  border-radius: 4px;
-  font-size: 2em;
+  width: 26vw;
+  padding: 1vh 0 1vh;
+  background: #f15922;
+  border: none ;
+  font-size: 5vh;
   text-decoration: none;
-  color: black;
+  color: white;
   cursor: pointer;
-}
-
-.EndGame--button:hover,
-.Pause--button:hover,
-.About--button:hover,
-.MainMenu--navbar--button:hover,
-.Rules--tip--button:hover {
-  background: rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
 }
 
 .About--text {
-  padding: 0 10% 0;
-  text-align: justify;
-  font-size: 1.5em;
+  padding: 2vh 4vw 2vh;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3vh;
+  font-weight: bolder;
+  color: #717b83;
 }
 
 .Grid-left,
@@ -241,3 +243,6 @@
   position: relative;
 }
 
+.Game {
+  background: #fff;
+}
