@@ -38,27 +38,51 @@ export default class Game extends Component {
 
   get defaultState() {
     return {
-      score: 80,
-      time: 60,
+      score: 0,
+      time: 5 * 60,
       stage: Stages.Rules,
       scale: 0,
 
       id: 0,
 
-      pc_face: false,
-      hoover_2: false,
+      cable: false,
+      'coffee-maker': false,
       extension_cable: false,
+      hoover: false,
+      hoover_2: false,
+      lamp_in_corridor: false,
+      lamp_near_bad: false,
+      lamp_near_mirror: false,
+      pc_back: false,
+      pc_face: false,
+      stove: false,
     };
   }
 
   onSvgClick(event) {
-    this.addScore.call(this, event, 'pc_face');
-    this.addScore.call(this, event, 'hoover_2');
+    this.addScore.call(this, event, 'cable');
+    this.addScore.call(this, event, 'coffee-maker');
     this.addScore.call(this, event, 'extension_cable');
+    this.addScore.call(this, event, 'hoover');
+    this.addScore.call(this, event, 'hoover_2');
+    this.addScore.call(this, event, 'lamp_in_corridor');
+    this.addScore.call(this, event, 'lamp_near_bad');
+    this.addScore.call(this, event, 'lamp_near_mirror');
+    this.addScore.call(this, event, 'pc_back');
+    this.addScore.call(this, event, 'pc_face');
+    this.addScore.call(this, event, 'stove');
 
-    if (this.state.pc_face &&
+    if (this.state.cable &&
+        this.state['coffee-maker'] &&
+        this.state.extension_cable &&
+        this.state.hoover &&
         this.state.hoover_2 &&
-        this.state.extension_cable) {
+        this.state.lamp_in_corridor &&
+        this.state.lamp_near_bad &&
+        this.state.lamp_near_mirror &&
+        this.state.pc_back &&
+        this.state.pc_face &&
+        this.state.stove) {
       this.setState({ stage: Stages.EndGame });
     }
   }
@@ -165,37 +189,37 @@ export default class Game extends Component {
             />
           </div>
           <div className="Grid-right SearchList">
-            <div className="img gray">
+            <div className={`img ${this.state.cable ? 'gray' : ''}`}>
               <img src="img/items/cable.svg" alt="Провод" />
             </div>
-            <div className="img gray">
+            <div className={`img ${this.state['coffee-maker'] ? 'gray' : ''}`}>
               <img src="img/items/coffee-maker.svg" alt="Кофе-машина" />
             </div>
-            <div  className={`img ${this.state.extension_cable ? 'gray' : ''}`}>
+            <div className={`img ${this.state.extension_cable ? 'gray' : ''}`}>
               <img src="img/items/extension_cable.svg" alt="Удлинитель" />
             </div>
-            <div className="img gray">
+            <div className={`img ${this.state.hoover ? 'gray' : ''}`}>
               <img src="img/items/hoover.svg" alt="Пылесос" />
             </div>
             <div className={`img ${this.state.hoover_2 ? 'gray' : ''}`}>
               <img src="img/items/hoover_2.svg" alt="Пылесос(2)" />
             </div>
-            <div className="img gray">
+            <div className={`img ${this.state.lamp_in_corridor ? 'gray' : ''}`}>
               <img src="img/items/lamp_in_corridor.svg" alt="Лампа в корридоре" />
             </div>
-            <div className="img gray">
+            <div className={`img ${this.state.lamp_near_bad ? 'gray' : ''}`}>
               <img src="img/items/lamp_near_bad.svg" alt="Лампа у кровати" />
             </div>
-            <div className="img gray">
+            <div className={`img ${this.state.lamp_near_mirror ? 'gray' : ''}`}>
               <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
             </div>
-            <div className="img gray">
+            <div className={`img ${this.state.pc_back ? 'gray' : ''}`}>
               <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
             </div>
             <div className={`img ${this.state.pc_face ? 'gray' : ''}`}>
               <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
             </div>
-            <div className="img gray">
+            <div className={`img ${this.state.stove ? 'gray' : ''}`}>
               <img src="img/items/stove.svg" alt="Плита" />
             </div>
           </div>

@@ -5291,7 +5291,7 @@ const scene = `
 			</g>
 			<g>
 				<polygon class="st77" points="175.8,159.2 165.2,165.4 165.2,165.6 153.5,158.8 153.6,158.7 164.2,152.6 				"></polygon>
-				<g>
+				<g class="stove">
 					<polygon class="st16" points="187.7,165.9 187.7,166.1 177,172.4 165.2,165.6 165.2,165.4 177,172.2 					"></polygon>
 					<polygon class="st17" points="176,159.1 175.8,159.2 165.2,165.4 177,172.2 187.7,165.9 					"></polygon>
 				</g>
@@ -7325,7 +7325,7 @@ const scene = `
 							<g>
 								<polygon class="st130" points="63.2,218.1 50.8,225.3 50.8,224.9 63.2,217.7 								"></polygon>
 							</g>
-							<g>
+							<g class="cable">
 								<polygon class="st137" points="63.2,217.7 50.8,224.9 47.3,222.8 59.7,215.7 								"></polygon>
 							</g>
 						</g>
@@ -8154,7 +8154,7 @@ const scene = `
 				</g>
 			</g>
 		</g>
-		<g>
+		<g class="cable">
 			<polygon class="st138" points="46,224.5 45.5,224.2 63,214.1 63.6,214.4 			"></polygon>
 			<polygon class="st138" points="48.9,225.6 48.4,225.9 45.5,224.2 46,223.9 			"></polygon>
 			<polygon class="st139" points="54.1,220.5 52.4,219.5 52.9,219.2 54.7,220.2 			"></polygon>
@@ -10219,7 +10219,7 @@ const scene = `
 				</g>
 			</g>
 		</g>
-		<g>
+		<g class="hoover">
 			<g>
 				<path class="st14" d="M70.6,262.7C70.6,262.7,70.6,262.7,70.6,262.7l0-2.2l-0.7,0.4c-0.3-0.4-0.7-0.7-1.3-1
 					c-2.6-1.5-6.9-1.5-9.5,0c-0.6,0.3-1,0.7-1.3,1.1l-0.6-0.5v2c0,0.1,0,0.3,0,0.4v0l0,0c0.1,0.9,0.7,1.9,2,2.6
@@ -15039,7 +15039,7 @@ const scene = `
 						</g>
 					</g>
 				</g>
-				<g>
+				<g class="pc_back">
 					<g>
 						<g>
 							<polygon class="st77" points="100.9,291.3 91,285.6 95.5,283 105.4,288.8 							"></polygon>
@@ -16890,7 +16890,7 @@ const scene = `
 					</g>
 				</g>
 			</g>
-			<g>
+			<g class="coffee-maker">
 				<g>
 					<g>
 						<path class="st14" d="M155.8,291.9l0-0.3h0c0,0-0.2,0-0.3-0.1c-0.2-0.1-0.3-0.3-0.3-0.6c0-0.2,0-0.4,0.2-0.5
@@ -17404,7 +17404,7 @@ const scene = `
 					</g>
 				</g>
 			</g>
-			<g class="st15">
+			<g class="lamp_in_corridor st15">
 				<g>
 					<polygon class="st14" points="311.4,214.7 311.4,219.4 308.9,218 308.9,213.3 					"></polygon>
 				</g>
@@ -17412,7 +17412,7 @@ const scene = `
 					<polygon class="st14" points="308.9,213.3 308.9,218 306.3,219.4 306.3,214.7 					"></polygon>
 				</g>
 
-					<image style="overflow:visible;" width="10" height="9" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAACXBIWXMAABcRAAAXEQHKJvM/AAAA
+					<image style="overflow:visible;" width="10" height="9" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAACXBIWXMAABcRAAAXEQHKJvM/AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALdJREFUeNqckEsPgjAQhIfd8mi5
 qIki/v/fJibqAY99rZREImI4sJem25ntt8PYUNm/5v3xFOcsmBWa0zFbNV27mzATtNYoigJ9/0K6
 W2txadtJS/MZAsoIVVmiyHMc9jvoSi9IZiYihjEGIoD3ATEKQghQKh8oOlmYPk0ZHFHiCJ5OIgIT
@@ -19051,7 +19051,7 @@ ZwAAAABJRU5ErkJggg==" transform="matrix(0.48 0 0 0.48 306.72 214.08)">
 						<stop offset="1" style="stop-color:#FFFFFF"></stop>
 					</radialGradient>
 					<circle class="st353" cx="317.6" cy="296" r="3"></circle>
-					<g>
+					<g class="lamp_near_bad">
 						<g>
 							<g class="st15">
 								<g>
@@ -19086,7 +19086,7 @@ ZwAAAABJRU5ErkJggg==" transform="matrix(0.48 0 0 0.48 306.72 214.08)">
 								<polygon class="st14" points="273.7,262.3 273.7,267.8 270.8,269.6 270.8,264 								"></polygon>
 							</g>
 
-								<image style="overflow:visible;" width="9" height="9" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAABcRAAAXEQHKJvM/AAAA
+								<image style="overflow:visible;" width="9" height="9" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAABcRAAAXEQHKJvM/AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALdJREFUeNqMT8sSgjAM3JTympET
 XvT/v00ucsCL0EfqUsZBOdE2TZNsdxODk8ucBdpjYppeyXmPrrvA0y/Lgmvfyx/jcxyTGEHbNjAi
 NAPnHB7DkIovaA2ADWStRUkz/NTUNd7zvEsXhUVVVUAinieEkJ/Ky9pyHybGANVISywqySV7jYqa
@@ -19105,7 +19105,7 @@ ZwAAAABJRU5ErkJggg==" transform="matrix(0.48 0 0 0.48 271.68 263.52)">
 							</g>
 						</g>
 					</g>
-					<g>
+					<g class="lamp_near_bad">
 						<g>
 							<g class="st15">
 								<g>
@@ -19140,7 +19140,7 @@ ZwAAAABJRU5ErkJggg==" transform="matrix(0.48 0 0 0.48 271.68 263.52)">
 								<polygon class="st14" points="317.6,287.7 317.6,293.2 314.6,294.9 314.6,289.4 								"></polygon>
 							</g>
 
-								<image style="overflow:visible;" width="10" height="10" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAACXBIWXMAABcRAAAXEQHKJvM/AAAA
+								<image style="overflow:visible;" width="10" height="10" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAACXBIWXMAABcRAAAXEQHKJvM/AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANdJREFUeNqcUkGOgzAMnCQ0BYn7
 lv3/27aXcqTSgu2sJ10qaHvCkuXE8XgmThIOWDoCarab2zgWxr7voarVp+mO4fIVtnVxXfxcr4XF
 9Hw6oUkNVBQxhnr2BlqTpoa1JYu7rvUG+bO8GBNyziilgGgzg/narEBc4qtVJjN1gD1ALHYP/5xd
@@ -21296,7 +21296,7 @@ KaX76R3gPFcwL8vfd3KvfaOfAAMA1p40Zu+6G9wAAAAASUVORK5CYII=" transform="matrix(0.48
 							</g>
 						</g>
 					</g>
-					<g>
+					<g class="lamp_near_mirror">
 						<radialGradient id="SVGID_122_" cx="189.4739" cy="274.9171" r="4.5241" gradientUnits="userSpaceOnUse">
 							<stop offset="0" style="stop-color:#FFF0BE"></stop>
 							<stop offset="0.2991" style="stop-color:#FFF0A6;stop-opacity:0.7009"></stop>
@@ -28889,18 +28889,6 @@ dAAAAECgAwAAgEAHAAAABDoAAAD8hff/DwA3f5+DuNf30QAAAABJRU5ErkJggg==" transform="mat
 </svg>
 `;
 
-// <ellipse id="lamp_near_mirror" transform="matrix(0.9268 -0.3755 0.3755 0.9268 -90.2172 94.6635)" class="st391" cx="197.8" cy="278.8" rx="20.8" ry="15.2"></ellipse>
-// <ellipse id="coffee-maker" transform="matrix(0.5 -0.866 0.866 0.5 -170.5491 286.3227)" class="st391" cx="162.7" cy="290.9" rx="8.4" ry="11.4"></ellipse>
-// <ellipse id="pc_back" transform="matrix(0.5 -0.866 0.866 0.5 -196.4515 222.5146)" class="st391" cx="94.5" cy="281.4" rx="9.9" ry="13.5"></ellipse>
-// <ellipse id="pc_face" onclick="alert('hello')" transform="matrix(0.5 -0.866 0.866 0.5 -206.5734 244.6254)" class="st391" cx="108.6" cy="301.2" rx="9.9" ry="13.5"></ellipse>
-// <ellipse id="hoover" transform="matrix(0.5 -0.866 0.866 0.5 -194.5804 185.9495)" class="st391" cx="63.7" cy="261.5" rx="8" ry="9.8"></ellipse>
-// <ellipse id="cable" transform="matrix(0.807 -0.5905 0.5905 0.807 -119.2884 73.842)" class="st391" cx="53.3" cy="219.4" rx="9.8" ry="8"></ellipse>
-// <ellipse id="stove" transform="matrix(0.807 -0.5905 0.5905 0.807 -64.5767 136.4982)" class="st391" cx="176.6" cy="167.1" rx="9.8" ry="8"></ellipse>
-// <ellipse id="extension_cable" transform="matrix(0.6232 -0.782 0.782 0.6232 -61.1779 178.8315)" class="st391" cx="155" cy="152.9" rx="8" ry="9.8"></ellipse>
-// <ellipse id="hoover_2" transform="matrix(0.6729 -0.7397 0.7397 0.6729 -58.4017 262.8405)" class="st391" cx="268" cy="197.5" rx="26.8" ry="18.1"></ellipse>
-// <ellipse id="lamp_in_corridor" class="st391" cx="308.9" cy="217.1" rx="5.7" ry="6.5"></ellipse>
-// <ellipse id="lamp_near_bad" class="st391" cx="317.1" cy="293" rx="5.7" ry="6.5"></ellipse>
-// <ellipse id="lamp_near_bad_2" class="st391" cx="274" cy="263.5" rx="5.7" ry="6.5"></ellipse>
 window.svgClick = (e) => console.log(e);
 function Scene(props) {
   return (
