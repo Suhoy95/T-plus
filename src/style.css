@@ -109,13 +109,26 @@
 }
 
 .SearchList {
+  position: relative;
   overflow-y: auto;
+  text-align: center;
 }
 
-.SearchList img {
+.SearchList .img {
+  position: relative;
   display: block;
-  width: 80%;
-  margin: 0.5em auto 0.5em;
+  width: 50%;
+  margin: 1em auto 1em;
+}
+
+.SearchList .img.gray::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 33, 33, 0.3);
 }
 
 .GameScene {
@@ -222,5 +235,9 @@
   margin: 0.2em auto 0;
   border: 1px solid;
   font-size: 3em;
+}
+
+.scene {
+  position: relative;
 }
 
