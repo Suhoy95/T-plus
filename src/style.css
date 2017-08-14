@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.EndGame,
+.Pause,
+.About,
+.MainMenu {
+  width: 80%;
+  height: 90vh;
+  margin: 5vh 10% 5vh 10%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  background: white;
+}
+
+.EndGame h1,
+.Pause h1,
+.About h1,
+.MainMenu h1 {
+  font-size: 4em;
+}
+
+.Pause--navbar,
+.MainMenu--navbar {
+  display: flex;
+  height: 33vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.EndGame--button,
+.Pause--button,
+.About--button,
+.MainMenu--navbar--button,
+.Rules--tip--button {
+  display: inline-block;
+  width: 8em;
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 2em;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.EndGame--button:hover,
+.Pause--button:hover,
+.About--button:hover,
+.MainMenu--navbar--button:hover,
+.Rules--tip--button:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.About--text {
+  padding: 0 10% 0;
+  text-align: justify;
+  font-size: 1.5em;
+}
+
+.Grid-left,
+.Grid-right {
+  display: inline-block;
+  height: 100%;
+}
+
+.Grid-left {
+  width: 80vw;
+}
+
+.Grid-right {
+  width: 20vw;
+  border-left: 1px solid;
+}
+
+.Header {
+  height: 15vh;
+  border-bottom: 1px solid black;
+}
+
+.Header--InfoItem {
+  display: inline-block;
+  height: 15vh;
+}
+
+.Header--InfoItem img {
+  width: 15vh;
+  height: 15vh;
+  float: left;
+}
+
+.Header--InfoItem span {
+  display: block;
+  height: 15vh;
+  width: 20vh;
+  padding-top: 1vh;
+  font-size: 4.5em;
+  float: left;
+}
+
+.Body {
+  height: 85vh;
+}
+
+.SearchList {
+  position: relative;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.SearchList .img {
+  position: relative;
+  display: block;
+  width: 50%;
+  margin: 1em auto 1em;
+}
+
+.SearchList .img.gray::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 33, 33, 0.3);
+}
+
+.GameScene {
+  position: relative;
+  overflow: auto;
+  text-align: center;
+}
+
+.GameScene--plus-scale,
+.GameScene--minus-scale {
+  position: fixed;
+  left: 72vw;
+  width: 10vh;
+  height: 10vh;
+  border: 1px solid;
+  border-radius: 5vh;
+  background: #fff;
+  font-size: 10vh;
+  text-align: center;
+  cursor: pointer;
+}
+
+.GameScene--plus-scale {
+  top: 74vh;
+  line-height: 10vh;
+}
+
+.GameScene--plus-scale::after {
+  content: '+';
+}
+
+.GameScene--minus-scale {
+  top: 86vh;
+  line-height: 8vh;
+}
+
+.GameScene--minus-scale::after {
+  content: '-';
+}
+
+.BurgerButton {
+  width: 100px;
+  height: 81px;
+  margin: 1vh auto;
+  cursor: pointer;
+}
+
+.BurgerButton--line {
+  display: block;
+  width: 100px;
+  height: 20px;
+  border: 1px solid black;
+  margin: 7px 0 7px;
+}
+
+.Shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7)
+}
+
+
+.Rules--tip {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  width: 17em;
+  padding: 0.5em 1em 0.5em;
+  background: #fff;
+  border: 1px solid;
+  font-size: 1.7em;
+  text-align: right;
+}
+
+.Rules--tip h2 {
+  text-align: center;
+}
+
+.Rules--tip p {
+  text-align: left;
+  margin-bottom: 0.3em;
+}
+
+.Rules--tip--button {
+  font-size: 1em;
+}
+
+
+.Pause--navbar {
+  margin-top: 1em;
+  height: 43vh;
+}
+
+.EndGame--score {
+  margin: 1em;
+  font-size: 1.5em;
+}
+
+.EndGame--score div {
+  width: 50%;
+  margin: 0.2em auto 0;
+  border: 1px solid;
+  font-size: 3em;
+}
+
+.scene {
+  position: relative;
+}
+
