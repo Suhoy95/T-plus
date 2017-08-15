@@ -93,6 +93,7 @@ body {
 
 .Header {
   height: 15vh;
+  background: #fff;
   border-bottom: 1px solid #c4c4c4;
 }
 
@@ -134,6 +135,7 @@ body {
   position: relative;
   overflow-y: auto;
   text-align: center;
+  background: #fff;
 }
 
 .SearchList .img {
