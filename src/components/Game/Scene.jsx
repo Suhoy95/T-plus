@@ -5090,7 +5090,7 @@ const scene = `
 					<g>
 						<polygon class="st20" points="165.5,165.4 176.9,172 176.9,172.5 165.5,165.9 						"></polygon>
 						<polygon class="st25" points="165.5,165.4 176.9,172 187.1,166.2 175.4,159.6 						"></polygon>
-						<polygon class="st17" points="166.3,165.4 175.5,160 186.3,166.2 176.9,171.5 						"></polygon>
+						<polygon class="stove st17" points="166.3,165.4 175.5,160 186.3,166.2 176.9,171.5 						></polygon>
 					</g>
 					<g>
 						<g>
@@ -5291,9 +5291,9 @@ const scene = `
 			</g>
 			<g>
 				<polygon class="st77" points="175.8,159.2 165.2,165.4 165.2,165.6 153.5,158.8 153.6,158.7 164.2,152.6 				"></polygon>
-				<g class="stove">
+				<g class="stove" >
 					<polygon class="st16" points="187.7,165.9 187.7,166.1 177,172.4 165.2,165.6 165.2,165.4 177,172.2 					"></polygon>
-					<polygon class="st17" points="176,159.1 175.8,159.2 165.2,165.4 177,172.2 187.7,165.9 					"></polygon>
+					<polygon class="stove st17" points="176,159.1 175.8,159.2 165.2,165.4 177,172.2 187.7,165.9 					></polygon>
 				</g>
 				<polygon class="st21" points="176,159.1 175.8,159.2 165.2,165.4 153.6,158.7 153.5,158.6 164.2,152.4 				"></polygon>
 			</g>
@@ -5807,7 +5807,7 @@ const scene = `
 					"></polygon>
 				<polygon class="st21" points="187.7,165.9 177,172.2 200.5,185.8 211.2,179.5 				"></polygon>
 			</g>
-			<g>
+			<g class="stove" >
 				<g>
 					<g>
 						<g>
@@ -7325,7 +7325,7 @@ const scene = `
 							<g>
 								<polygon class="st130" points="63.2,218.1 50.8,225.3 50.8,224.9 63.2,217.7 								"></polygon>
 							</g>
-							<g class="cable">
+							<g>
 								<polygon class="st137" points="63.2,217.7 50.8,224.9 47.3,222.8 59.7,215.7 								"></polygon>
 							</g>
 						</g>
@@ -17362,7 +17362,7 @@ const scene = `
 				<polygon class="st72" points="313.6,223 313.9,222.9 305.1,217.8 304.8,217.9 				"></polygon>
 			</g>
 		</g>
-		<g id="лампа_в_прихожей">
+		<g id="лампа_в_прихожей" class="lamp_in_corridor">
 			<radialGradient id="SVGID_110_" cx="308.8573" cy="219.9005" r="4.5241" gradientUnits="userSpaceOnUse">
 				<stop offset="0" style="stop-color:#FFF0BE"></stop>
 				<stop offset="0.2991" style="stop-color:#FFF0A6;stop-opacity:0.7009"></stop>
@@ -17377,7 +17377,7 @@ const scene = `
 			</radialGradient>
 			<circle class="st325" cx="308.9" cy="219.9" r="2"></circle>
 		</g>
-		<g>
+		<g class="lamp_in_corridor">
 			<g>
 				<g class="st15">
 					<g>
@@ -17404,7 +17404,7 @@ const scene = `
 					</g>
 				</g>
 			</g>
-			<g class="lamp_in_corridor st15">
+			<g class="st15">
 				<g>
 					<polygon class="st14" points="311.4,214.7 311.4,219.4 308.9,218 308.9,213.3 					"></polygon>
 				</g>
@@ -19024,7 +19024,7 @@ ZwAAAABJRU5ErkJggg==" transform="matrix(0.48 0 0 0.48 306.72 214.08)">
 						<path class="st25" d="M288.9,292c0,0,4.4,0.5,11.4,6.8C300.4,298.7,294.6,296.3,288.9,292z"></path>
 					</g>
 				</g>
-				<g>
+				<g class="lamp_near_bad">
 					<radialGradient id="SVGID_114_" cx="273.643" cy="270.1518" r="6.6466" gradientUnits="userSpaceOnUse">
 						<stop offset="0" style="stop-color:#FFF0BE"></stop>
 						<stop offset="0.2991" style="stop-color:#FFF0A6;stop-opacity:0.7009"></stop>
@@ -19051,7 +19051,7 @@ ZwAAAABJRU5ErkJggg==" transform="matrix(0.48 0 0 0.48 306.72 214.08)">
 						<stop offset="1" style="stop-color:#FFFFFF"></stop>
 					</radialGradient>
 					<circle class="st353" cx="317.6" cy="296" r="3"></circle>
-					<g class="lamp_near_bad">
+					<g>
 						<g>
 							<g class="st15">
 								<g>
@@ -19105,7 +19105,7 @@ ZwAAAABJRU5ErkJggg==" transform="matrix(0.48 0 0 0.48 271.68 263.52)">
 							</g>
 						</g>
 					</g>
-					<g class="lamp_near_bad">
+					<g>
 						<g>
 							<g class="st15">
 								<g>
@@ -23147,9 +23147,9 @@ fmOuO5Rph+85DMVQxNqx/VgiXki0dwy298zZ1dEzb0fXwoXb33HW2e50XY8IIJEcnHtHSxBJBJBI
 IoBEEgEkkgggkUQAiSQCSCQRQCKJABJJJBFAIokAEkkEkEgigEQSASSSCCCRRACJJAJIJBFAIokk
 Akgkh5b/NwDEcPeoGpYu8wAAAABJRU5ErkJggg==" transform="matrix(0.1241 0 0 0.1241 183.14 160.9052)">
 </image>
-<polygon class="st390" points="51.7,219 52.5,217.8 51.9,217.8 52.4,216.7 51.4,218.2 52,218.2 "></polygon>
-<polygon class="st390" points="53,219.7 53.8,218.5 53.3,218.5 53.7,217.3 52.8,218.9 53.3,218.9 "></polygon>
-<polygon class="st390" points="54.6,218.2 55.4,217 54.9,217 55.3,215.8 54.4,217.3 54.9,217.3 "></polygon>
+<polygon class="cable st390" points="51.7,219 52.5,217.8 51.9,217.8 52.4,216.7 51.4,218.2 52,218.2 "></polygon>
+<polygon class="cable st390" points="53,219.7 53.8,218.5 53.3,218.5 53.7,217.3 52.8,218.9 53.3,218.9 "></polygon>
+<polygon class="cable st390" points="54.6,218.2 55.4,217 54.9,217 55.3,215.8 54.4,217.3 54.9,217.3 "></polygon>
 <polygon class="st391" points="161.6,272.9 174.6,280.4 174.6,284.4 161.6,276.9 "></polygon>
 <text transform="matrix(0.8661 0.5 0 1 161.6565 273.3047)"><tspan x="0" y="0" class="st392 st393">Выключайте</tspan><tspan x="0" y="0.6" class="st392 st393"> кофемашину!</tspan></text>
 <polygon class="st394" points="157.2,154 156.4,153.5 156.5,153.4 157.4,153.9 "></polygon>
