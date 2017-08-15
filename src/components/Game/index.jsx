@@ -14,6 +14,20 @@ const Stages = {
   EndGame: 'ENDGAME',
 };
 
+function hide(node) {
+  node.style.display = 'none';
+}
+
+function hideStuff(className) {
+  document.querySelectorAll(`.${className}`).forEach(hide);
+}
+
+function hideAllStuff(map) {
+  for (const key in map) {
+    map[key] && hideStuff(key);
+  }
+}
+
 export default class Game extends Component {
   constructor() {
     super();
@@ -99,7 +113,7 @@ export default class Game extends Component {
     }
     let el = event.path.find(n => n.classList && n.classList.contains(className));
     if (el) {
-      el.style.display = 'none';
+      hideStuff(className);
       if (!this.state[className]) {
         this.score += 10;
       }
@@ -129,6 +143,7 @@ export default class Game extends Component {
       return;
     }
     this.setState({ scale: value });
+    this.restoreScene();
   }
 
   start() {
@@ -136,6 +151,7 @@ export default class Game extends Component {
       stage: Stages.Game,
       id: this.state.id + 1,
     });
+    this.restoreScene();
     this.tickInterval = setInterval(this.tick, 1000);
   }
 
@@ -162,6 +178,22 @@ export default class Game extends Component {
     const minutes = Math.floor(this.state.time / 60);
     const seconds = this.state.time % 60;
     return `${minutes}:${seconds < 10 ? 0 : ''}${seconds}`;
+  }
+
+  restoreScene() {
+    setTimeout(hideAllStuff, 500, {
+      cable: this.state.cable,
+      'coffee-maker': this.state['coffee-maker'],
+      extension_cable: this.state.extension_cable,
+      hoover: this.state.hoover,
+      hoover_2: this.state.hoover_2,
+      lamp_in_corridor: this.state.lamp_in_corridor,
+      lamp_near_bad: this.state.lamp_near_bad,
+      lamp_near_mirror: this.state.lamp_near_mirror,
+      pc_back: this.state.pc_back,
+      pc_face: this.state.pc_face,
+      stove: this.state.stove,
+    });
   }
 
   render() {

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e62cfab69ae01c79af67"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "59ffc4d63899e34a4e52"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -12176,6 +12176,20 @@ var Stages = {
   EndGame: 'ENDGAME'
 };
 
+function hide(node) {
+  node.style.display = 'none';
+}
+
+function hideStuff(className) {
+  document.querySelectorAll('.' + className).forEach(hide);
+}
+
+function hideAllStuff(map) {
+  for (var key in map) {
+    map[key] && hideStuff(key);
+  }
+}
+
 var Game = function (_Component) {
   _inherits(Game, _Component);
 
@@ -12240,7 +12254,7 @@ var Game = function (_Component) {
         return n.classList && n.classList.contains(className);
       });
       if (el) {
-        el.style.display = 'none';
+        hideStuff(className);
         if (!this.state[className]) {
           this.score += 10;
         }
@@ -12254,6 +12268,7 @@ var Game = function (_Component) {
         stage: Stages.Game,
         id: this.state.id + 1
       });
+      this.restoreScene();
       this.tickInterval = setInterval(this.tick, 1000);
     }
   }, {
@@ -12277,6 +12292,23 @@ var Game = function (_Component) {
         return;
       }
       this.setState({ time: nextTime });
+    }
+  }, {
+    key: 'restoreScene',
+    value: function restoreScene() {
+      setTimeout(hideAllStuff, 500, {
+        cable: this.state.cable,
+        'coffee-maker': this.state['coffee-maker'],
+        extension_cable: this.state.extension_cable,
+        hoover: this.state.hoover,
+        hoover_2: this.state.hoover_2,
+        lamp_in_corridor: this.state.lamp_in_corridor,
+        lamp_near_bad: this.state.lamp_near_bad,
+        lamp_near_mirror: this.state.lamp_near_mirror,
+        pc_back: this.state.pc_back,
+        pc_face: this.state.pc_face,
+        stove: this.state.stove
+      });
     }
   }, {
     key: 'render',
@@ -12545,6 +12577,7 @@ var Game = function (_Component) {
         return;
       }
       this.setState({ scale: value });
+      this.restoreScene();
     }
   }, {
     key: 'time',
