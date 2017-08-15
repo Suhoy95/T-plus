@@ -7,14 +7,10 @@ function MainMenu() {
   return (
     <div className="MainMenu">
       <h1>Меню</h1>
-      <div className="MainMenu--navbar">
-        <Link className="MainMenu--navbar--button" to="/game">
-          Начать игру
-        </Link>
-        <Link className="MainMenu--navbar--button" to="/about">
-          О компании
-        </Link>
-      </div>
+      <Link className="MainMenu--navbar--button" to="/game">
+        Начать игру
+      </Link>
+      <p className="About--text">Всероссийский фестиваль энергосбережения #ВместеЯрче проводится при поддержке Минэнерго России, Минобрнауки России, Росмолодежи, ГК "Фонд содействия реформированию ЖКХ", Министерства культуры России, фонда «Росконгресс» и Т+</p>
     </div>
   );
 }
