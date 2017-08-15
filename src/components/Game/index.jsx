@@ -269,8 +269,7 @@ export default class Game extends Component {
               <div className="Rules--tip">
                 <h2>Правила</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nulla quam velit, vulputate eu
+                  Семья хочет сэкономить на счетах за электричество. Но все постоянно забывают выключить ненужные электроприборы. Помогите семье найти утечки электричества.
                 </p>
                 <button className="Rules--tip--button" onClick={this.start}>
                   Понятно
