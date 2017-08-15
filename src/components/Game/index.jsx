@@ -139,7 +139,7 @@ export default class Game extends Component {
     return this.state.scale;
   }
   set scale(value) {
-    if (value < 0 || value > 5) {
+    if (value < 0 || value > 10) {
       return;
     }
     this.setState({ scale: value });

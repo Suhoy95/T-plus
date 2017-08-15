@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "59ffc4d63899e34a4e52"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fa4ba71d7db9c7d61c38"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -12573,7 +12573,7 @@ var Game = function (_Component) {
       return this.state.scale;
     },
     set: function set(value) {
-      if (value < 0 || value > 5) {
+      if (value < 0 || value > 10) {
         return;
       }
       this.setState({ scale: value });
