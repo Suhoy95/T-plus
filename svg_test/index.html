@@ -15,14 +15,16 @@
         const iframe = document.querySelector('iframe');
         const svgDovument = iframe.contentDocument;
 
-        svgDovument.addEventListener('click', (event) => {
+        const handler = (event) => {
           const success = !!event.path.find(n => n.classList && n.classList.contains('hoover'));
           alert(`
             Click!
 
             success: ${success}!!
-          `);
-        });
+          `)
+        };
+        svgDovument.addEventListener('click', handler);
+        svgDovument.addEventListener('touchstart', handler);
       }
     </script>
   </body>
