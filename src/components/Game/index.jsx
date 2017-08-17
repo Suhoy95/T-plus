@@ -14,6 +14,32 @@ const Stages = {
   EndGame: 'ENDGAME',
 };
 
+const defaultState = {
+  score: 0,
+  time: 5 * 60,
+  stage: Stages.Rules,
+  scale: 0,
+
+  timeIsOut: true,
+
+  id: 0,
+
+  cable: false,
+  'coffee-maker': false,
+  extension_cable: false,
+  hoover: false,
+  hoover_2: false,
+  lamp_in_corridor: false,
+  lamp_near_bad: false,
+  lamp_near_mirror: false,
+  pc_back: false,
+  pc_face: false,
+  stove: false,
+};
+
+/**
+ * @param {HTMLElement} node
+ */
 function hide(node) {
   node.style.display = 'none';
 }
@@ -23,15 +49,15 @@ function hideStuff(className) {
 }
 
 function hideAllStuff(map) {
-  for (const key in map) {
-    map[key] && hideStuff(key);
-  }
+  Object.keys(map)
+        .filter(key => map[key])
+        .forEach(hideStuff);
 }
 
 export default class Game extends Component {
   constructor() {
     super();
-    this.state = this.defaultState;
+    this.state = defaultState;
     this.start = this.start.bind(this);
     this.pause = this.pause.bind(this);
     this.restart = this.restart.bind(this);
@@ -48,31 +74,6 @@ export default class Game extends Component {
 
   componentWillUnmount() {
     clearInterval(this.tickInterval);
-  }
-
-  get defaultState() {
-    return {
-      score: 0,
-      time: 5 * 60,
-      stage: Stages.Rules,
-      scale: 0,
-
-      timeIsOut: true,
-
-      id: 0,
-
-      cable: false,
-      'coffee-maker': false,
-      extension_cable: false,
-      hoover: false,
-      hoover_2: false,
-      lamp_in_corridor: false,
-      lamp_near_bad: false,
-      lamp_near_mirror: false,
-      pc_back: false,
-      pc_face: false,
-      stove: false,
-    };
   }
 
   onSvgClick(event) {
@@ -111,8 +112,8 @@ export default class Game extends Component {
     if (!event.path) {
       return;
     }
-    let el = event.path.find(n => n.classList && n.classList.contains(className));
-    if (el) {
+    const node = event.path.find(n => n.classList && n.classList.contains(className));
+    if (node) {
       hideStuff(className);
       if (!this.state[className]) {
         this.score += 10;
@@ -161,7 +162,7 @@ export default class Game extends Component {
   }
 
   restart() {
-    this.setState(this.defaultState);
+    this.setState(defaultState);
   }
 
   tick() {
@@ -220,11 +221,11 @@ export default class Game extends Component {
             <Scene style={this.sceneSize} id={this.state.id} stage={this.state.stage} />
             <button
               className="GameScene--plus-scale"
-              onClick={() => this.scale += 1}
+              onClick={() => { this.scale += 1; }}
             />
             <button
               className="GameScene--minus-scale"
-              onClick={() => this.scale -= 1}
+              onClick={() => { this.scale -= 1; }}
             />
           </div>
           <div className="Grid-right SearchList">
@@ -269,7 +270,12 @@ export default class Game extends Component {
               <div className="Rules--tip">
                 <h2>Правила</h2>
                 <p>
-                  Семья хочет сэкономить на счетах за электричество. Но все постоянно забывают выключить ненужные электроприборы. Помогите семье найти утечки электричества.
+                  Помогите семье из 4 человек начать экономить деньги на электроэнергии.
+                  Вам необходимо внимательно посмотреть какие электроприборы не используются в
+                  данный момент и могут быть отключены. После того как вы обнаружите такой
+                  электроприбор просто кликните на него или нажмите пальцем, он отключиться и Вам
+                  начислятся баллы. Если вы сомневаетесь или не видите какие еще электроприборы
+                  можно отключть нажмите на кнопку с подсказками.
                 </p>
                 <button className="Rules--tip--button" onClick={this.start}>
                   Понятно
