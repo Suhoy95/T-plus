@@ -21,6 +21,7 @@ const defaultState = {
   scale: 0,
 
   timeIsOut: true,
+  showRightPanel: true,
 
   id: 0,
 
@@ -161,6 +162,7 @@ export default class Game extends Component {
     this.setState({
       stage: Stages.Game,
       id: this.state.id + 1,
+      showRightPanel: false,
     });
     this.restoreScene();
     this.tickInterval = setInterval(this.tick, 1000);
@@ -230,18 +232,25 @@ export default class Game extends Component {
           </div>
         </div>
         <div className="Body">
-          <div className="Grid-left">
-            <Scene style={this.sceneSize} id={this.state.id} stage={this.state.stage} />
+          <div className={`Grid-left ${this.state.showRightPanel ? '' : 'closed'}`}>
+            <Scene
+              className={`Grid-left ${this.state.showRightPanel ? '' : 'closed'}`}
+              style={this.sceneSize} id={this.state.id} stage={this.state.stage}
+            />
             <button
-              className="GameScene--plus-scale"
+              className={`GameScene--tip-button ${this.state.showRightPanel ? '' : 'closed'}`}
+              onClick={() => { this.setState({ showRightPanel: !this.state.showRightPanel }) }}
+            > Подсказки </button>
+            <button
+              className={`GameScene--plus-scale ${this.state.showRightPanel ? '' : 'closed'}`}
               onClick={() => { this.scale += 1; }}
             />
             <button
-              className="GameScene--minus-scale"
+              className={`GameScene--minus-scale ${this.state.showRightPanel ? '' : 'closed'}`}
               onClick={() => { this.scale -= 1; }}
             />
           </div>
-          <div className="Grid-right SearchList">
+          <div className={`Grid-right SearchList ${this.state.showRightPanel ? '' : 'closed'}`}>
             <div className={`img ${this.state.cable ? 'gray' : ''}`}>
               <img src="img/items/cable.svg" alt="Провод" />
             </div>
