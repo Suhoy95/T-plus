@@ -233,10 +233,17 @@ export default class Game extends Component {
         </div>
         <div className="Body">
           <div className={`Grid-left ${this.state.showRightPanel ? '' : 'closed'}`}>
-            <Scene
-              className={`Grid-left ${this.state.showRightPanel ? '' : 'closed'}`}
-              style={this.sceneSize} id={this.state.id} stage={this.state.stage}
-            />
+            {
+              this.state.stage === Stages.Rules ?
+                <div className={`Grid-left GameScene ${this.state.showRightPanel ? '' : 'closed'}`}>
+                  <img src="img/scene_shadowed.svg" width="100%" alt="Правила" />
+                </div>
+                :
+                <Scene
+                  className={`Grid-left ${this.state.showRightPanel ? '' : 'closed'}`}
+                  style={this.sceneSize} id={this.state.id} stage={this.state.stage}
+                />
+            }
             <button
               className={`GameScene--tip-button ${this.state.showRightPanel ? '' : 'closed'}`}
               onClick={() => { this.setState({ showRightPanel: !this.state.showRightPanel }) }}
@@ -250,54 +257,102 @@ export default class Game extends Component {
               onClick={() => { this.scale -= 1; }}
             />
           </div>
-          <div className={`Grid-right SearchList ${this.state.showRightPanel ? '' : 'closed'}`}>
-            <div className={`img ${this.state.cable ? 'gray' : ''}`}>
-              <img src="img/items/cable.svg" alt="Провод" />
-            </div>
-            <div className={`img ${this.state['coffee-maker'] ? 'gray' : ''}`}>
-              <img src="img/items/coffee-maker.svg" alt="Кофе-машина" />
-            </div>
-            <div className={`img ${this.state.extension_cable ? 'gray' : ''}`}>
-              <img src="img/items/extension_cable.svg" alt="Удлинитель" />
-            </div>
-            <div className={`img ${this.state.hoover ? 'gray' : ''}`}>
-              <img src="img/items/hoover.svg" alt="Пылесос" />
-            </div>
-            <div className={`img ${this.state.hoover_2 ? 'gray' : ''}`}>
-              <img src="img/items/hoover_2.svg" alt="Пылесос(2)" />
-            </div>
-            <div className={`img ${this.state.lamp_in_corridor ? 'gray' : ''}`}>
-              <img src="img/items/lamp_in_corridor.svg" alt="Лампа в корридоре" />
-            </div>
-            <div className={`img ${this.state.lamp_near_bad ? 'gray' : ''}`}>
-              <img src="img/items/lamp_near_bad.svg" alt="Лампа у кровати" />
-            </div>
-            <div className={`img ${this.state.lamp_near_mirror ? 'gray' : ''}`}>
-              <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
-            </div>
-            <div className={`img ${this.state['pan-item'] ? 'gray' : ''}`}>
-              <img src="img/items/pan-item.svg" alt="" />
-            </div>
-            <div className={`img ${this.state.pc_back ? 'gray' : ''}`}>
-              <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
-            </div>
-            <div className={`img ${this.state.pc_face ? 'gray' : ''}`}>
-              <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
-            </div>
-            <div className={`img ${this.state.powerbank ? 'gray' : ''}`}>
-              <img src="img/items/powerbank.svg" alt="Компьютер, передняя панель" />
-            </div>
-            <div className={`img ${this.state.stove ? 'gray' : ''}`}>
-              <img src="img/items/stove.svg" alt="Плита" />
-            </div>
-            <div className={`img ${this.state.window ? 'gray' : ''}`}>
-              <img src="img/items/window.svg" alt="Плита" />
-            </div>
-          </div>
+          {
+            this.state.stage === Stages.Rules ?
+              <div className={`Grid-right SearchList black ${this.state.showRightPanel ? '' : 'closed'}`}>
+                <div className="img black">
+                  <img src="img/items/cable.svg" alt="Провод" />
+                </div>
+                <div className="img">
+                  <img src="img/items/hoover.svg" alt="Пылесос" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/coffee-maker.svg" alt="Кофе-машина" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/extension_cable.svg" alt="Удлинитель" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/hoover_2.svg" alt="Пылесос(2)" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/lamp_in_corridor.svg" alt="Лампа в корридоре" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/lamp_near_bad.svg" alt="Лампа у кровати" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/pan-item.svg" alt="" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/powerbank.svg" alt="Компьютер, передняя панель" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/stove.svg" alt="Плита" />
+                </div>
+                <div className="img black">
+                  <img src="img/items/window.svg" alt="Плита" />
+                </div>
+              </div>
+            :
+              <div className={`Grid-right SearchList ${this.state.showRightPanel ? '' : 'closed'}`}>
+                <div className={`img ${this.state.cable ? 'gray' : ''}`}>
+                  <img src="img/items/cable.svg" alt="Провод" />
+                </div>
+                <div className={`img ${this.state['coffee-maker'] ? 'gray' : ''}`}>
+                  <img src="img/items/coffee-maker.svg" alt="Кофе-машина" />
+                </div>
+                <div className={`img ${this.state.extension_cable ? 'gray' : ''}`}>
+                  <img src="img/items/extension_cable.svg" alt="Удлинитель" />
+                </div>
+                <div className={`img ${this.state.hoover ? 'gray' : ''}`}>
+                  <img src="img/items/hoover.svg" alt="Пылесос" />
+                </div>
+                <div className={`img ${this.state.hoover_2 ? 'gray' : ''}`}>
+                  <img src="img/items/hoover_2.svg" alt="Пылесос(2)" />
+                </div>
+                <div className={`img ${this.state.lamp_in_corridor ? 'gray' : ''}`}>
+                  <img src="img/items/lamp_in_corridor.svg" alt="Лампа в корридоре" />
+                </div>
+                <div className={`img ${this.state.lamp_near_bad ? 'gray' : ''}`}>
+                  <img src="img/items/lamp_near_bad.svg" alt="Лампа у кровати" />
+                </div>
+                <div className={`img ${this.state.lamp_near_mirror ? 'gray' : ''}`}>
+                  <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
+                </div>
+                <div className={`img ${this.state['pan-item'] ? 'gray' : ''}`}>
+                  <img src="img/items/pan-item.svg" alt="" />
+                </div>
+                <div className={`img ${this.state.pc_back ? 'gray' : ''}`}>
+                  <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
+                </div>
+                <div className={`img ${this.state.pc_face ? 'gray' : ''}`}>
+                  <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
+                </div>
+                <div className={`img ${this.state.powerbank ? 'gray' : ''}`}>
+                  <img src="img/items/powerbank.svg" alt="Компьютер, передняя панель" />
+                </div>
+                <div className={`img ${this.state.stove ? 'gray' : ''}`}>
+                  <img src="img/items/stove.svg" alt="Плита" />
+                </div>
+                <div className={`img ${this.state.window ? 'gray' : ''}`}>
+                  <img src="img/items/window.svg" alt="Плита" />
+                </div>
+              </div>
+          }
         </div>
         {
           this.state.stage === Stages.Rules ?
-            <div className="Shadow">
+            <div>
               <div className="Rules--tip">
                 <h2>Правила</h2>
                 <p>
