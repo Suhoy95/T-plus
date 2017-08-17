@@ -32,9 +32,12 @@ const defaultState = {
   lamp_in_corridor: false,
   lamp_near_bad: false,
   lamp_near_mirror: false,
+  'pan-item': false,
   pc_back: false,
   pc_face: false,
+  powerbank: false,
   stove: false,
+  window: false,
 };
 
 /**
@@ -85,9 +88,12 @@ export default class Game extends Component {
     this.addScore.call(this, event, 'lamp_in_corridor');
     this.addScore.call(this, event, 'lamp_near_bad');
     this.addScore.call(this, event, 'lamp_near_mirror');
+    this.addScore.call(this, event, 'pan-item');
     this.addScore.call(this, event, 'pc_back');
     this.addScore.call(this, event, 'pc_face');
+    this.addScore.call(this, event, 'powerbank');
     this.addScore.call(this, event, 'stove');
+    this.addScore.call(this, event, 'window');
 
     if (this.state.cable &&
         this.state['coffee-maker'] &&
@@ -97,9 +103,13 @@ export default class Game extends Component {
         this.state.lamp_in_corridor &&
         this.state.lamp_near_bad &&
         this.state.lamp_near_mirror &&
+        this.state['pan-item'] &&
         this.state.pc_back &&
         this.state.pc_face &&
-        this.state.stove) {
+        this.state.powerbank &&
+        this.state.stove &&
+        this.state.window
+      ) {
       this.setState({
         stage: Stages.EndGame,
         timeIsOut: false,
@@ -191,9 +201,12 @@ export default class Game extends Component {
       lamp_in_corridor: this.state.lamp_in_corridor,
       lamp_near_bad: this.state.lamp_near_bad,
       lamp_near_mirror: this.state.lamp_near_mirror,
+      'pan-item': this.state['pan-item'],
       pc_back: this.state.pc_back,
       pc_face: this.state.pc_face,
+      powerbank: this.state.powerbank,
       stove: this.state.stove,
+      window: this.state.window,
     });
   }
 
@@ -253,14 +266,23 @@ export default class Game extends Component {
             <div className={`img ${this.state.lamp_near_mirror ? 'gray' : ''}`}>
               <img src="img/items/lamp_near_mirror.svg" alt="Лампа у зеркала" />
             </div>
+            <div className={`img ${this.state['pan-item'] ? 'gray' : ''}`}>
+              <img src="img/items/pan-item.svg" alt="" />
+            </div>
             <div className={`img ${this.state.pc_back ? 'gray' : ''}`}>
               <img src="img/items/pc_back.svg" alt="Компьютер, задняя панель" />
             </div>
             <div className={`img ${this.state.pc_face ? 'gray' : ''}`}>
               <img src="img/items/pc_face.svg" alt="Компьютер, передняя панель" />
             </div>
+            <div className={`img ${this.state.powerbank ? 'gray' : ''}`}>
+              <img src="img/items/powerbank.svg" alt="Компьютер, передняя панель" />
+            </div>
             <div className={`img ${this.state.stove ? 'gray' : ''}`}>
               <img src="img/items/stove.svg" alt="Плита" />
+            </div>
+            <div className={`img ${this.state.window ? 'gray' : ''}`}>
+              <img src="img/items/window.svg" alt="Плита" />
             </div>
           </div>
         </div>
