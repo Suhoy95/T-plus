@@ -52,7 +52,7 @@ body {
 .Rules--tip--button,
 .GameScene--tip-button {
   display: inline-block;
-  width: 26vw;
+  width: 28vw;
   padding: 1vh 0 1vh;
   background: #f15922;
   border: none ;
@@ -243,7 +243,7 @@ body {
 }
 
 .Rules--tip--button {
-  width: 20vw;
+  width: 25vw;
   font-size: 5vh;
 }
 

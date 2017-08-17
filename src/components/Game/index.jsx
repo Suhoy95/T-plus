@@ -309,7 +309,7 @@ export default class Game extends Component {
                   можно отключть нажмите на кнопку с подсказками.
                 </p>
                 <button className="Rules--tip--button" onClick={this.start}>
-                  Понятно
+                  Начать игру
                 </button>
               </div>
             </div>
