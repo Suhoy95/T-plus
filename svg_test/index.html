@@ -16,7 +16,15 @@
         const svgDovument = iframe.contentDocument;
 
         const handler = (event) => {
-          const success = !!event.path.find(n => n.classList && n.classList.contains('hoover'));
+          let success = false;
+          let node = event.target;
+          while(node && node !== svgDovument) {
+            if(node.classList && node.classList.contains('hoover')) {
+              success = true;
+              break;
+            }
+            node = node.parentElement;
+          }
           alert(`
             Click!
 
