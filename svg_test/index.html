@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SVG-click test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <iframe src="scene.svg" width="800" height="600" onload="init()"></iframe>
+    <script>
+      function init() {
+        const iframe = document.querySelector('iframe');
+        const svgDovument = iframe.contentDocument;
+
+        svgDovument.addEventListener('click', (event) => {
+          const success = !!event.path.find(n => n.classList && n.classList.contains('hoover'));
+          alert(`
+            Click!
+
+            success: ${success}!!
+          `);
+        });
+      }
+    </script>
+  </body>
+</html>
